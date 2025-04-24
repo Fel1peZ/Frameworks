@@ -11,8 +11,8 @@
 <body>
     <div id="cabecalho">
 
-        <button onclick="mostraOcultaDiv('containerCod'),renderIframe()">Visualizar página</button>
-        <button onclick="mostraOcultaDiv('containerPreview'),gerarCodigo()">Gerar código</button>
+        <button onclick="mostraOcultaDiv('containerPreview'),renderIframe()">Visualizar página</button>
+        <button onclick="mostraOcultaDiv('containerCod'),gerarCodigo()">Gerar código</button>
 
     </div>
     <div class="container">
@@ -81,7 +81,7 @@
             </div>
             <h1>Conteúdo</h1><br>
             <textarea name="txtConteudo" id="txtConteudo" cols="50" rows="15"></textarea><br>
-            Imagem:<input type="file" id="imagem"><br>
+            Imagem:<input type="text" id="imagem" placeholder="coloque o link da imagem"><br> 
             Largura: <input type="number" id="largura">
             Altura: <input type="number" id="altura">
             <hr>
@@ -96,12 +96,12 @@
             <div id="containerCod" class="content active">
                 <h1>HTML</h1>
                 <textarea cols="100" rows="30" id="codeHTML"></textarea><br>
-                <button onclick="download('codeHTML','')">downoad do código</button>
+                <button onclick="download('codeHTML','')">download do código</button>
 
 
                 <h1>CSS</h1>
                 <textarea id="codeCSS" cols="100" rows="30"></textarea><br>
-                <button onclick="download('codeCSS','estilo.css')">downoad do código</button>
+                <button onclick="download('codeCSS','estilo.css')">download do código</button>
             </div>
 
         </div>

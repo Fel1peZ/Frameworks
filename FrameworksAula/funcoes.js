@@ -21,6 +21,13 @@ function configEstiloLinks(){
     ctxLinks+=" text-decoration:"+aux+";\n}\n";
     return ctxLinks;
 }
+
+function configEstiloImg(){
+    largura=document.getElementById("largura").value;
+    altura=document.getElementById("altura").value;
+    ctxImg="#imagem{\n width: "+largura+"px;\n height:"+altura+"px ;\n}"
+    return ctxImg;
+}
 function configHtmlLinks(){
     if(!ancora)return "";   
     links=document.getElementsByName("links");
@@ -42,11 +49,14 @@ function configHTMLConteudo(){
     let txtConteudo=document.querySelector("#txtConteudo").value;
     return txtConteudo;
 }
+
  function gerarCodigo(){
     //Cóigo para CSS
+    let img = document.getElementById("imagem").value;
      let codeCSS=document.querySelector("#codeCSS");
      let css=configEstiloCabecalho();
      css+=configEstiloLinks();
+     css+=configEstiloImg();
      codeCSS.value=css;
     //Código para HTML
      let codeHTML=document.querySelector("#codeHTML");
@@ -57,6 +67,7 @@ function configHTMLConteudo(){
          "<div id='cabecalho'>"+configHTMLCabecalho()+"</div>\n" +
          "<nav id='links'>\n"+configHtmlLinks()+"\n</nav>\n" +
          "<div id='conteudo'>"+configHTMLConteudo()+"</div>\n" +
+         "<div><img id='imagem' src='"+img+"' alt=''></div>\n" +
          "</body>\n</html>";
      codeHTML.value=ctxHTML;
 
